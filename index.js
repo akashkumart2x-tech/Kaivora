@@ -1024,8 +1024,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const planName = btn.closest(".pricing-card") ? btn.closest(".pricing-card").querySelector("h3").textContent : "Custom";
         showToast(`Deploying ${planName} AI Employee cluster...`, "info");
         setTimeout(() => {
-          showToast(`Successfully deployed ${planName} Agent! Check telemetry below.`, "success");
-          document.getElementById("analytics").scrollIntoView({ behavior: "smooth" });
+          showToast(`Successfully deployed ${planName} Agent! Initializing cognitive modules...`, "success");
+          const analyticsEl = document.getElementById("analytics") || document.getElementById("workflow");
+          if (analyticsEl) {
+            analyticsEl.scrollIntoView({ behavior: "smooth" });
+          }
         }, 1500);
       }
     });
