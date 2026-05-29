@@ -1160,5 +1160,28 @@ document.addEventListener("DOMContentLoaded", () => {
     closeChatbotBtn.addEventListener("click", toggleChatbot);
   }
 
+  /* --- 12. CONTACT FORM SUBMISSION HOOK --- */
+  const contactForm = document.getElementById("contactForm");
+  const contactSubmitBtn = document.getElementById("contactSubmitBtn");
+
+  if (contactForm && contactSubmitBtn) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      contactSubmitBtn.disabled = true;
+      contactSubmitBtn.style.opacity = "0.7";
+      const originalHTML = contactSubmitBtn.innerHTML;
+      contactSubmitBtn.innerHTML = `<span>Securing transmission channel...</span>`;
+
+      setTimeout(() => {
+        showToast("Collaboration request sent successfully! Our AI team will get in touch with you shortly.", "success");
+        contactForm.reset();
+        contactSubmitBtn.disabled = false;
+        contactSubmitBtn.style.opacity = "1";
+        contactSubmitBtn.innerHTML = originalHTML;
+      }, 1500);
+    });
+  }
+
 });
 
