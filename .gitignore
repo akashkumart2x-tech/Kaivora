@@ -1,0 +1,7 @@
+# Ignore standard temporary files, node packages, and build logs
+node_modules/
+.gemini/
+.system_generated/
+*.log
+.DS_Store
+Thumbs.db

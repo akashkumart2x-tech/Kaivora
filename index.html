@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaivora | We Build AI Employees For Modern Businesses</title>
+  <meta name="description" content="Custom AI agents and automation systems that handle work, save time and drive growth. Capture leads, manage bookings, and automate workflows 24/7.">
+  
+  <!-- Core styling stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- Sticky Navigation Header -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <a href="#" class="header-logo" id="headerLogo">
+        <i data-lucide="cpu" style="color: var(--color-cyan);"></i>
+        <span>KAIVORA</span>
+      </a>
+      
+      <nav class="header-nav" id="headerNav">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#what-we-build">What We Build</a>
+        <a href="#analytics">Orchestrator</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary">Login</button>
+        <button class="btn btn-primary" onclick="window.location.href='#pricing'">Build AI Employee</button>
+      </div>
+
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Collapsible Menu (Glassmorphic) -->
+  <div class="mobile-menu" id="mobileMenu" style="display: none; position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px); background: rgba(8, 13, 34, 0.98); backdrop-filter: blur(24px); z-index: 999; border-top: 1px solid rgba(255,255,255,0.08); padding: 2rem; flex-direction: column; gap: 2rem; align-items: center;">
+    <a href="#overview" style="font-family: var(--font-headings); font-size: 24px; color: var(--color-text-primary);">Overview</a>
+    <a href="#what-we-build" style="font-family: var(--font-headings); font-size: 24px; color: var(--color-text-primary);">What We Build</a>
+    <a href="#analytics" style="font-family: var(--font-headings); font-size: 24px; color: var(--color-text-primary);">Orchestrator</a>
+    <a href="#workflow" style="font-family: var(--font-headings); font-size: 24px; color: var(--color-text-primary);">Workflow</a>
+    <a href="#pricing" style="font-family: var(--font-headings); font-size: 24px; color: var(--color-text-primary);">Pricing</a>
+    <a href="#faq" style="font-family: var(--font-headings); font-size: 24px; color: var(--color-text-primary);">FAQ</a>
+    <div style="display: flex; flex-direction: column; width: 100%; gap: 1rem; margin-top: 2rem;">
+      <button class="btn btn-secondary" style="width: 100%;">Login</button>
+      <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='#pricing'">Build AI Employee</button>
+    </div>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left Column Content -->
+          <div class="hero-content">
+            <div class="ai-badge">
+              <span></span>
+              AI Systems. Real Results.
+            </div>
+            
+            <h1 class="text-gradient" style="font-size: 64px;">We Build AI Employees For Modern Businesses.</h1>
+            
+            <p class="hero-desc">
+              Custom AI agents and automation systems that handle complex work, save valuable developer & admin time, and drive rapid compound growth on autopilot.
+            </p>
+            
+            <div class="hero-cta">
+              <button class="btn btn-primary" onclick="window.location.href='#pricing'">Build Your AI Employee</button>
+              <button class="btn btn-secondary" onclick="window.location.href='#what-we-build'">
+                <i data-lucide="play-circle"></i>
+                Explore Capabilities
+              </button>
+            </div>
+            
+            <!-- Core Value Bar from Image -->
+            <div class="hero-stats" style="grid-template-columns: repeat(4, 1fr); padding-top: 1.5rem;">
+              <div class="stat-item" style="align-items: center; text-align: center;">
+                <i data-lucide="target" style="color: var(--color-emerald); width: 24px; height: 24px; margin-bottom: 0.5rem;"></i>
+                <span class="stat-value" style="font-size: 16px; letter-spacing: 0.05em;">SMARTER</span>
+                <span class="stat-label" style="font-size: 10px;">AUTOMATION</span>
+              </div>
+              <div class="stat-item" style="align-items: center; text-align: center;">
+                <i data-lucide="clock" style="color: var(--color-cyan); width: 24px; height: 24px; margin-bottom: 0.5rem;"></i>
+                <span class="stat-value" style="font-size: 16px; letter-spacing: 0.05em;">24/7</span>
+                <span class="stat-label" style="font-size: 10px;">OPERATIONS</span>
+              </div>
+              <div class="stat-item" style="align-items: center; text-align: center;">
+                <i data-lucide="trending-up" style="color: var(--color-cyan); width: 24px; height: 24px; margin-bottom: 0.5rem;"></i>
+                <span class="stat-value" style="font-size: 16px; letter-spacing: 0.05em;">HIGHER</span>
+                <span class="stat-label" style="font-size: 10px;">CONVERSIONS</span>
+              </div>
+              <div class="stat-item" style="align-items: center; text-align: center;">
+                <i data-lucide="dollar-sign" style="color: var(--color-amber); width: 24px; height: 24px; margin-bottom: 0.5rem;"></i>
+                <span class="stat-value" style="font-size: 16px; letter-spacing: 0.05em;">LOWER</span>
+                <span class="stat-label" style="font-size: 10px;">COSTS</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right Column Floating Dashboard Mockup -->
+          <div class="hero-visual">
+            <div class="glass-card floating-dashboard">
+              <!-- Linear Scanning Overlay -->
+              <div class="scanning-line-overlay"></div>
+              
+              <div class="db-card-header">
+                <div class="db-card-title">
+                  <i data-lucide="cpu" style="color: var(--color-cyan);"></i>
+                  <span>KAIVORA AGENT ORCHESTRATOR</span>
+                </div>
+                <span class="db-badge-green">5 ACTIVE AGENTS</span>
+              </div>
+              
+              <div class="db-stat-group">
+                <div class="db-mini-card">
+                  <span class="db-mini-lbl">TASKS SOLVED</span>
+                  <span class="db-mini-val text-gradient-emerald" id="tasksSolvedCount">18,294</span>
+                </div>
+                <div class="db-mini-card">
+                  <span class="db-mini-lbl">RESPONSE RATE</span>
+                  <span class="db-mini-val" style="color: var(--color-cyan);">&lt; 1.2s avg</span>
+                </div>
+              </div>
+              
+              <!-- Scan Bar Progress Component (Simulates Training/Processing) -->
+              <div style="margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 12px; font-weight: 700;">
+                  <span style="color: var(--color-cyan);">AI VOICE AGENT TUNING</span>
+                  <span style="color: var(--color-text-primary);" id="liveScanPercentage">72%</span>
+                </div>
+                <div class="scan-bar-container">
+                  <div class="scan-bar-fill"></div>
+                </div>
+              </div>
+
+              <!-- Mini Console Stream -->
+              <div style="background: rgba(0, 0, 0, 0.4); border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); padding: 0.75rem 1rem; font-family: monospace; font-size: 11px; color: var(--color-cyan); display: flex; flex-direction: column; gap: 0.35rem;">
+                <div style="display: flex; justify-content: space-between; color: var(--color-text-muted);">
+                  <span>AGENT_ID: VOICE_SEC_01</span>
+                  <span>AUTOPILOT_ONLINE</span>
+                </div>
+                <div>&gt; INCOMING INBOUND CALL RECEIVED... SUCCESS</div>
+                <div style="color: var(--color-emerald);">&gt; COMPLETED BOOKING CONFIRMATION: APPOINTMENT SET</div>
+                <div style="color: var(--color-amber);">&gt; SYNCED CONTACT METADATA TO HUBSPOT CRM ENGINE</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Trusted By Logo Cloud -->
+    <section class="trusted">
+      <div class="container">
+        <h2 class="trusted-title">INTEGRATING SEAMLESSLY WITH LEADING CLOUD APPS</h2>
+        <div class="logo-grid">
+          
+          <div class="logo-card" title="Salesforce">
+            <!-- Salesforce SVG Logo -->
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25,28 C20,28 15,24 15,19 C15,14 19,10 24,10 C26,10 28,11 30,12 C32,8 37,5 42,5 C48,5 53,9 55,14 C57,13 59,12 61,12 C66,12 70,16 70,21 C70,26 66,30 61,30 Z" fill="none" stroke="currentColor" stroke-width="2.5" />
+              <text x="50" y="27" font-family="sans-serif" font-weight="900" font-size="10" fill="currentColor" letter-spacing="0.5">SALESFORCE</text>
+            </svg>
+          </div>
+          
+          <div class="logo-card" title="HubSpot">
+            <!-- HubSpot SVG Logo -->
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2.5" />
+              <circle cx="34" cy="14" r="4" fill="currentColor" />
+              <line x1="26" y1="16" x2="32" y2="14" stroke="currentColor" stroke-width="2" />
+              <text x="48" y="25" font-family="sans-serif" font-weight="900" font-size="11" fill="currentColor" letter-spacing="1">HUBSPOT</text>
+            </svg>
+          </div>
+          
+          <div class="logo-card" title="Slack">
+            <!-- Slack SVG Logo -->
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="4" fill="currentColor" />
+              <rect x="22" y="12" width="10" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="2" />
+              <text x="44" y="25" font-family="sans-serif" font-weight="900" font-size="13" fill="currentColor" letter-spacing="1.5">SLACK</text>
+            </svg>
+          </div>
+          
+          <div class="logo-card" title="Zapier">
+            <!-- Zapier SVG Logo -->
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="20,8 32,20 20,32 8,20" fill="none" stroke="currentColor" stroke-width="2" />
+              <circle cx="20" cy="20" r="3" fill="currentColor" />
+              <text x="44" y="25" font-family="sans-serif" font-weight="900" font-size="13" fill="currentColor" letter-spacing="2">ZAPIER</text>
+            </svg>
+          </div>
+          
+          <div class="logo-card" title="Calendly">
+            <!-- Calendly SVG Logo -->
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="20" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="2.5" />
+              <path d="M15,15 H25 M15,20 H25 M15,25 H21" stroke="currentColor" stroke-width="2" />
+              <text x="42" y="25" font-family="sans-serif" font-weight="900" font-size="11" fill="currentColor" letter-spacing="1">CALENDLY</text>
+            </svg>
+          </div>
+          
+          <div class="logo-card" title="Stripe">
+            <!-- Stripe SVG Logo -->
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12,20 C12,14 16,10 22,10 H26 M14,30 H18 C24,30 28,26 28,20" fill="none" stroke="currentColor" stroke-width="2.5" />
+              <text x="40" y="25" font-family="sans-serif" font-weight="900" font-size="13" fill="currentColor" letter-spacing="1">STRIPE</text>
+            </svg>
+          </div>
+          
+          <div class="logo-card" title="ActiveCampaign">
+            <!-- ActiveCampaign SVG Logo -->
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="12,12 28,20 12,28" fill="none" stroke="currentColor" stroke-width="2.5" />
+              <circle cx="28" cy="20" r="4" fill="currentColor" />
+              <text x="42" y="25" font-family="sans-serif" font-weight="900" font-size="9" fill="currentColor" letter-spacing="1">CAMPAIGN</text>
+            </svg>
+          </div>
+          
+          <div class="logo-card" title="Notion">
+            <!-- Notion SVG Logo -->
+            <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="24" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="2.5" />
+              <path d="M13,13 L13,27 M13,13 L20,23 L27,13 L27,27" stroke="currentColor" stroke-width="2" />
+              <text x="44" y="25" font-family="sans-serif" font-weight="900" font-size="12" fill="currentColor" letter-spacing="1.5">NOTION</text>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature grid (Bento Layout) -->
+    <section class="features" id="what-we-build">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">WHAT WE BUILD</span>
+          <h2 class="text-gradient">Custom AI Agent Automation</h2>
+          <p>We craft tailor-made, intelligent digital workforces configured to run recurring task processes without friction.</p>
+        </div>
+
+        <div class="bento-grid">
+          
+          <!-- Bento Card 1: AI Chat Agents -->
+          <div class="glass-card bento-card bento-row-2" data-accent="emerald">
+            <div class="icon-box">
+              <i data-lucide="message-circle"></i>
+            </div>
+            <h3>AI Chat Agents</h3>
+            <p>Intelligent chatbots that handle complex customer support queries, address detailed product inquiries, and host seamless natural conversations around the clock.</p>
+          </div>
+
+          <!-- Bento Card 2: AI Voice Agents -->
+          <div class="glass-card bento-card" data-accent="cyan">
+            <div class="icon-box">
+              <i data-lucide="phone-call"></i>
+            </div>
+            <h3>AI Voice Agents</h3>
+            <p>Natural, ultra-realistic voice agents programmed to make outbound calls, answer incoming queries, and assist your customers 24/7.</p>
+          </div>
+
+          <!-- Bento Card 3: Lead & Sales Automation -->
+          <div class="glass-card bento-card" data-accent="cyan">
+            <div class="icon-box">
+              <i data-lucide="filter"></i>
+            </div>
+            <h3>Lead & Sales Automation</h3>
+            <p>Capture hot leads, qualify them using dynamic query structures, follow up instantly, and close high-ticket deals automatically.</p>
+          </div>
+
+          <!-- Bento Card 4: Appointment Booking Agents -->
+          <div class="glass-card bento-card" data-accent="red">
+            <div class="icon-box">
+              <i data-lucide="calendar"></i>
+            </div>
+            <h3>Appointment Booking Agents</h3>
+            <p>Dedicated AI receptionists that book discovery calls, reschedule conflicts, and manage complicated calendar structures for you.</p>
+          </div>
+
+          <!-- Bento Card 5: Workflow Automation -->
+          <div class="glass-card bento-card bento-row-2" data-accent="amber">
+            <div class="icon-box">
+              <i data-lucide="settings"></i>
+            </div>
+            <h3>Workflow Automation</h3>
+            <p>Eliminate human error by automating repetitive operational tasks and syncing complex workflows seamlessly across your entire suite of developer & business tools.</p>
+          </div>
+
+          <!-- Bento Card 6: CRM & Data Automation -->
+          <div class="glass-card bento-card" data-accent="emerald">
+            <div class="icon-box">
+              <i data-lucide="database"></i>
+            </div>
+            <h3>CRM & Data Automation</h3>
+            <p>Instantly sync custom database entries, update Salesforce or HubSpot contacts, and keep client pipelines running flawlessly on autopilot.</p>
+          </div>
+
+          <!-- Bento Card 7: Human-in-the-Loop Safeguards -->
+          <div class="glass-card bento-card" data-accent="amber">
+            <div class="icon-box">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Human-in-the-Loop</h3>
+            <p>Maintain absolute reliability with active escalation triggers that transfer complex edge cases to human staff members instantly.</p>
+          </div>
+
+          <!-- Bento Card 8: Conversational Analytics -->
+          <div class="glass-card bento-card" data-accent="red">
+            <div class="icon-box">
+              <i data-lucide="bar-chart-3"></i>
+            </div>
+            <h3>Deep Conversation Auditing</h3>
+            <p>Inspect detailed transcript breakdowns, sentiment analysis reports, and key outcome scores logged dynamically inside your orchestrator dashboard.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Security/AI Analytics Dashboard Preview -->
+    <section class="dashboard-preview" id="analytics">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">KAIVORA ORCHESTRATOR PREVIEW</span>
+          <h2 class="text-gradient">Continuous Operations Control</h2>
+          <p>Gain absolute transparency over task completion, booking volume, and live customer interaction streams inside an elegant telemetry dashboard.</p>
+        </div>
+
+        <div class="glass-card dashboard-container">
+          <!-- Live Scanner Line Animation -->
+          <div class="scanning-line-overlay"></div>
+          
+          <div class="dashboard-header">
+            <div class="dashboard-info">
+              <i data-lucide="cpu" style="color: var(--color-emerald); display: flex;"></i>
+              <h3 style="font-size: 18px; font-weight: 700;">PROD_AGENT_POOL_01</h3>
+              <span class="dashboard-badge">AUTOPILOT ON</span>
+            </div>
+            <div style="font-size: 13px; color: var(--color-text-muted); font-family: monospace;">
+              COGNITIVE_LLM: <span style="color: var(--color-emerald);">KAIVORA_V2.4</span>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            
+            <!-- Column 1: Vulnerability Trends -> Adapted to AI Task Trend -->
+            <div class="chart-widget">
+              <h4 class="widget-title">
+                <i data-lucide="bar-chart-2" style="color: var(--color-cyan); width: 18px; height: 18px;"></i>
+                Successful AI Resolutions
+              </h4>
+              <div class="bar-chart-container">
+                <div class="chart-bar-group">
+                  <div class="bar-track">
+                    <div class="bar-fill accent-emerald" style="height: 85%;"></div>
+                  </div>
+                  <span class="bar-label">MON</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="bar-track">
+                    <div class="bar-fill accent-cyan" style="height: 60%;"></div>
+                  </div>
+                  <span class="bar-label">TUE</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="bar-track">
+                    <div class="bar-fill accent-amber" style="height: 45%;"></div>
+                  </div>
+                  <span class="bar-label">WED</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="bar-track">
+                    <div class="bar-fill accent-red" style="height: 72%;"></div>
+                  </div>
+                  <span class="bar-label">THU</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="bar-track">
+                    <div class="bar-fill accent-emerald" style="height: 90%;"></div>
+                  </div>
+                  <span class="bar-label">FRI</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="bar-track">
+                    <div class="bar-fill accent-cyan" style="height: 38%;"></div>
+                  </div>
+                  <span class="bar-label">SAT</span>
+                </div>
+                <div class="chart-bar-group">
+                  <div class="bar-track">
+                    <div class="bar-fill accent-emerald" style="height: 95%;"></div>
+                  </div>
+                  <span class="bar-label">SUN</span>
+                </div>
+              </div>
+              <p style="font-size: 12px; color: var(--color-text-muted); line-height: 1.4;">
+                Successful autonomous task outcomes increased by <span style="color: var(--color-emerald); font-weight: 700;">+24%</span> with active voice integrations.
+              </p>
+            </div>
+
+            <!-- Column 2: CVSS Gauge -> Adapted to Automation Efficiency Score -->
+            <div class="radial-heatmap-widget">
+              
+              <div class="gauge-row">
+                <!-- CVSS Risk Gauge -> AI Efficiency Gauge -->
+                <div class="cvss-gauge-container">
+                  <div class="cvss-outer-ring" id="cvssRing">
+                    <div class="cvss-inner-circle">
+                      <span class="cvss-val">9.4</span>
+                      <span class="cvss-lbl" style="color: var(--color-emerald);">EXCELLENT</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="gauge-details">
+                  <h4>Efficiency Score</h4>
+                  <p>Consolidated task accuracy score calculated across support transcripts and CRM API endpoints.</p>
+                </div>
+              </div>
+
+              <!-- Risk Heatmap -> Task Matrix -->
+              <div class="heatmap-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                  <h4 style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-primary);">
+                    Active Task Processing Matrix
+                  </h4>
+                  <span style="font-size: 11px; color: var(--color-text-muted);">Coordinates: Pool_Node_02</span>
+                </div>
+                
+                <!-- Heatmap grid (12 cols x 4 rows) -->
+                <div class="heatmap-grid" id="riskHeatmap">
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-2"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-4"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-2"></div>
+                  <div class="heatmap-cell level-3"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-2"></div>
+                  <div class="heatmap-cell level-1"></div>
+
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-3"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-2"></div>
+                  <div class="heatmap-cell level-4"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-2"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-3"></div>
+
+                  <div class="heatmap-cell level-2"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-2"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-3"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-4"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-2"></div>
+                  <div class="heatmap-cell level-1"></div>
+
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-3"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-2"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-2"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-3"></div>
+                  <div class="heatmap-cell level-1"></div>
+                  <div class="heatmap-cell level-4"></div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Column 3: Active Threats Feed -> Adapted to Active Agent Stream -->
+            <div class="threat-feed-widget">
+              <h4 class="widget-title">
+                <i data-lucide="activity" style="color: var(--color-cyan); width: 18px; height: 18px;"></i>
+                Live AI Employee Stream
+              </h4>
+              
+              <div class="threat-stack" id="threatFeedStack">
+                
+                <!-- Alert 1 -->
+                <div class="threat-item threat-red" style="background: rgba(52, 211, 153, 0.07); border-color: rgba(52,211,153,0.15);">
+                  <div class="threat-item-left">
+                    <span class="pulse-indicator emerald" style="background-color: var(--color-emerald); box-shadow: 0 0 8px var(--color-emerald);"></span>
+                    <div class="threat-meta">
+                      <span class="threat-name">Customer Inquiry Resolved</span>
+                      <span class="threat-target">CHAT_AGENT: ticket #42891</span>
+                    </div>
+                  </div>
+                  <div class="threat-right">
+                    <span class="threat-time">0.2s AGO</span>
+                    <span class="status-pill emerald" style="background: rgba(52,211,153,0.15); color: var(--color-emerald); border-color: rgba(52,211,153,0.2);">Solved</span>
+                  </div>
+                </div>
+
+                <!-- Alert 2 -->
+                <div class="threat-item threat-amber" style="background: rgba(34, 211, 238, 0.07); border-color: rgba(34,211,238,0.15);">
+                  <div class="threat-item-left">
+                    <span class="pulse-indicator cyan" style="background-color: var(--color-cyan); box-shadow: 0 0 8px var(--color-cyan);"></span>
+                    <div class="threat-meta">
+                      <span class="threat-name">Inbound Voice Call Answered</span>
+                      <span class="threat-target">VOICE_AGENT: (555) 019-2819</span>
+                    </div>
+                  </div>
+                  <div class="threat-right">
+                    <span class="threat-time">4.5s AGO</span>
+                    <span class="status-pill cyan" style="background: rgba(34,211,238,0.15); color: var(--color-cyan); border-color: rgba(34,211,238,0.2);">Call End</span>
+                  </div>
+                </div>
+
+                <!-- Alert 3 -->
+                <div class="threat-item threat-cyan" style="background: rgba(251, 191, 36, 0.07); border-color: rgba(251,191,36,0.15);">
+                  <div class="threat-item-left">
+                    <span class="pulse-indicator amber" style="background-color: var(--color-amber); box-shadow: 0 0 8px var(--color-amber);"></span>
+                    <div class="threat-meta">
+                      <span class="threat-name">Calendar Sync Completed</span>
+                      <span class="threat-target">BOOKING_AGENT: Stark Demo Set</span>
+                    </div>
+                  </div>
+                  <div class="threat-right">
+                    <span class="threat-time">12.1s AGO</span>
+                    <span class="status-pill amber" style="background: rgba(251,191,36,0.15); color: var(--color-amber); border-color: rgba(251,191,36,0.2);">Synced</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Workflow Timeline -->
+    <section class="timeline-section" id="workflow">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">PIPELINE SYNCHRONIZATION</span>
+          <h2 class="text-gradient">Three-Step Deployment Workflow</h2>
+          <p>We follow a rigid structured framework to outline operations, program custom agents, and launch your automated workforce.</p>
+        </div>
+
+        <div class="timeline-row">
+          
+          <!-- Step 1 -->
+          <div class="timeline-step" data-step="1">
+            <div class="timeline-icon-container">
+              <div class="timeline-icon-box">
+                <i data-lucide="search" style="width: 32px; height: 32px;"></i>
+              </div>
+            </div>
+            <h3>1. Operational Mapping</h3>
+            <p>We audit your existing tools, manual tasks, and call structures to isolate bottlenecks and define key automation metrics.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-step" data-step="2">
+            <div class="timeline-icon-container">
+              <div class="timeline-icon-box">
+                <i data-lucide="cog" style="width: 32px; height: 32px;"></i>
+              </div>
+            </div>
+            <h3>2. Custom Training</h3>
+            <p>We build, train, and benchmark custom AI agents using your internal workflow playbooks and secure sandbox pipelines.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-step" data-step="3">
+            <div class="timeline-icon-container">
+              <div class="timeline-icon-box">
+                <i data-lucide="play" style="width: 32px; height: 32px;"></i>
+              </div>
+            </div>
+            <h3>3. Autopilot Release</h3>
+            <p>Launch your new AI employees. Monitor live calls, active chats, and instant CRM updates inside the Kaivora panel.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Pricing Tiers -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">FLEXIBLE PLANS</span>
+          <h2 class="text-gradient">Investment Tiers</h2>
+          <p>Choose the custom training capacity suited to support your customer operations and internal workflow volume.</p>
+        </div>
+
+        <div class="pricing-grid">
+          
+          <!-- Tier 1: Base -->
+          <div class="pricing-card">
+            <h3 class="pricing-name">Starter Agent</h3>
+            
+            <div class="pricing-price">
+              <span class="price-currency">$</span>
+              <span class="price-value">199</span>
+              <span class="price-period">/ month</span>
+            </div>
+            
+            <ul class="pricing-features">
+              <li>
+                <i data-lucide="check"></i>
+                <span>2 Active AI Chat Agents</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>Standard Calendly booking integration</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>Automatic lead qualifying</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>Slack notifications & alerts</span>
+              </li>
+            </ul>
+
+            <button class="btn btn-secondary">Deploy Starter</button>
+          </div>
+
+          <!-- Tier 2: Professional (Featured with 35% Emerald Border Glow) -->
+          <div class="pricing-card featured">
+            <span class="pricing-badge">Recommended</span>
+            <h3 class="pricing-name" style="color: var(--color-emerald);">Growth Pack</h3>
+            
+            <div class="pricing-price">
+              <span class="price-currency" style="color: var(--color-emerald);">$</span>
+              <span class="price-value" style="color: var(--color-emerald);">499</span>
+              <span class="price-period">/ month</span>
+            </div>
+            
+            <ul class="pricing-features">
+              <li>
+                <i data-lucide="check" style="color: var(--color-emerald);"></i>
+                <strong>Unlimited Chat Agents & Bookers</strong>
+              </li>
+              <li>
+                <i data-lucide="check" style="color: var(--color-emerald);"></i>
+                <span>2 Custom AI Voice Agent pools</span>
+              </li>
+              <li>
+                <i data-lucide="check" style="color: var(--color-emerald);"></i>
+                <span>Complex workflow & tool automation</span>
+              </li>
+              <li>
+                <i data-lucide="check" style="color: var(--color-emerald);"></i>
+                <span>Bi-directional CRM & Hubspot sync</span>
+              </li>
+              <li>
+                <i data-lucide="check" style="color: var(--color-emerald);"></i>
+                <span>Full human escalation safeguard</span>
+              </li>
+            </ul>
+
+            <button class="btn btn-primary">Deploy Growth</button>
+          </div>
+
+          <!-- Tier 3: Enterprise -->
+          <div class="pricing-card">
+            <h3 class="pricing-name">Enterprise Custom</h3>
+            
+            <div class="pricing-price">
+              <span class="price-currency" style="color: var(--color-text-muted);">$</span>
+              <span class="price-value" style="font-size: 38px;">Custom</span>
+            </div>
+            
+            <ul class="pricing-features">
+              <li>
+                <i data-lucide="check"></i>
+                <span>Dedicated on-premise LLM fine-tuning</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>Massive outbound voice agent lines</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>Strict SOC2 & custom API hooks</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>Dedicated technical account manager</span>
+              </li>
+              <li>
+                <i data-lucide="check"></i>
+                <span>99.9% uptime voice SLA guarantee</span>
+              </li>
+            </ul>
+
+            <button class="btn btn-secondary">Contact Sales</button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="faq" id="faq">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">COMMON INQUIRIES</span>
+          <h2 class="text-gradient">Technical FAQs</h2>
+          <p>Get immediate clarification on how our custom AI Employees operate, interact, and secure client telemetry.</p>
+        </div>
+
+        <div class="faq-container">
+          
+          <!-- Accordion Item 1 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>How realistic do the AI Voice Agents sound?</span>
+              <span class="faq-icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="faq-content">
+              <p>
+                Our AI voice models utilize low-latency, state-of-the-art speech synthesis that includes human breathing patterns, natural pauses, and conversational tones. In most cases, clients cannot distinguish them from local, live support staff. They operate with a latency of less than 600ms, making calls extremely fluid.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>Can the AI agents transfer a call or chat to a real human?</span>
+              <span class="faq-icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="faq-content">
+              <p>
+                Yes. If an customer presents a highly custom question, requests human assistance, or exceeds the agent's qualified knowledge base, the system triggers a seamless hot-handover. It routes the active voice line or chat window directly to your human staff while forwarding the preceding transcript history.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>How do the CRM automations sync database entries?</span>
+              <span class="faq-icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="faq-content">
+              <p>
+                We use secure, encrypted REST API channels to authenticate directly with your CRM platforms (such as Salesforce, HubSpot, or ActiveCampaign). Once a chat or voice conversation concludes, our agent compiles the qualified variables, logs the transcript, and updates the contact records on autopilot in real-time.
+              </p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 4 -->
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>Is our customer data kept private and secure?</span>
+              <span class="faq-icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="faq-content">
+              <p>
+                Absolutely. Customer privacy is our highest priority. All chat logs, voice transcripts, and contact synchronizations are encrypted end-to-end using AES-256 standards. We operate on a strict zero-retention policy for model training: your client interactions are never shared or used to train open LLM bases.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bottom Conversion Banner from Image -->
+    <section style="padding: 4rem 0 8rem; position: relative;">
+      <div class="container" style="max-width: 896px;">
+        <div class="glass-card" style="padding: 2.5rem 3.5rem; display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; align-items: center; gap: 2rem; border-color: rgba(34, 211, 238, 0.25); background: linear-gradient(135deg, rgba(8, 13, 34, 0.9) 0%, rgba(34, 211, 238, 0.05) 100%);">
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; flex-grow: 1;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; color: var(--color-cyan);">
+              <i data-lucide="message-square" style="width: 24px; height: 24px;"></i>
+              <span style="font-family: var(--font-headings); font-weight: 700; letter-spacing: 0.05em; font-size: 16px; text-transform: uppercase;">Ready to Automate Your Business?</span>
+            </div>
+            <p style="font-size: 14px; color: var(--color-text-muted);">Let's collaborate to architect your personalized digital workforce.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem;">
+            <div style="font-family: var(--font-headings); font-size: 22px; font-weight: 700; color: var(--color-text-primary); text-align: right;">
+              DM <span style="color: var(--color-cyan);">"AI"</span> TO GET STARTED
+            </div>
+            <a href="#pricing" class="btn btn-primary" style="margin-top: 0.5rem; padding: 0.65rem 1.75rem;">
+              Build AI Employee
+              <i data-lucide="chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Multi-column Footer -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a href="#" class="footer-brand-logo">
+            <i data-lucide="cpu" style="color: var(--color-cyan);"></i>
+            <span>KAIVORA</span>
+          </a>
+          <p class="footer-brand-desc" style="margin-bottom: 0.5rem;">
+            Sleek dark-themed AI systems delivering real operational results for forward-thinking enterprises.
+          </p>
+          <div class="footer-socials" style="margin-bottom: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="#" class="social-icon" aria-label="GitHub"><i data-lucide="github"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Youtube"><i data-lucide="youtube"></i></a>
+            <a href="#" class="social-icon" aria-label="Discord"><i data-lucide="message-square"></i></a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 13px; color: var(--color-text-muted); margin-top: 0.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="map-pin" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0;"></i>
+              <span>100 Pine St, San Francisco, CA 94111</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="phone" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0;"></i>
+              <a href="tel:+14155552677" style="transition: var(--transition-smooth); color: var(--color-text-secondary); text-decoration: none;">+1 (415) 555-2677</a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="mail" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0;"></i>
+              <a href="mailto:solutions@kaivora.com" style="transition: var(--transition-smooth); color: var(--color-text-secondary); text-decoration: none;">solutions@kaivora.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Product -->
+        <div class="footer-col">
+          <h4>Agent Suite</h4>
+          <ul>
+            <li><a href="#what-we-build">AI Chat Agents</a></li>
+            <li><a href="#what-we-build">AI Voice Agents</a></li>
+            <li><a href="#what-we-build">Sales Automation</a></li>
+            <li><a href="#what-we-build">Calendar Bookers</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Kaivora</a></li>
+            <li><a href="#">Security posture</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Kit</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Resources -->
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Agent SDK Docs</a></li>
+            <li><a href="#">Integration API</a></li>
+            <li><a href="#">System Uptime</a></li>
+            <li><a href="#">AI Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal -->
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">SLA Agreement</a></li>
+            <li><a href="#">HIPAA Compliance</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Kaivora Inc. All rights reserved. Custom AI Agents. Real Operational Results.
+        </div>
+        <div class="footer-info-links">
+          <a href="#">Contact Us</a>
+          <span>&middot;</span>
+          <a href="#">Agent Ops</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Frosted Glassmorphic Login/Signup Modal -->
+  <div class="login-modal-overlay" id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(8, 13, 34, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); z-index: 10000; align-items: center; justify-content: center; opacity: 0; transition: opacity 300ms ease;">
+    <div class="glass-card login-modal-container" style="width: 100%; max-width: 440px; padding: 2.5rem; position: relative; border-color: rgba(34, 211, 238, 0.25); background: rgba(10, 14, 39, 0.85); box-shadow: 0 0 50px rgba(0,0,0,0.8), 0 0 30px rgba(34, 211, 238, 0.05); transform: scale(0.95); transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);">
+      
+      <!-- Close button -->
+      <button id="closeLoginBtn" style="position: absolute; top: 1.5rem; right: 1.5rem; background: transparent; border: none; color: var(--color-text-muted); cursor: pointer; padding: 0.25rem; transition: var(--transition-smooth); display: flex;">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+
+      <!-- Tabs -->
+      <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 0.5rem;">
+        <button class="login-tab active" id="tabSignIn" style="background: transparent; border: none; color: var(--color-text-primary); font-family: var(--font-headings); font-size: 20px; font-weight: 700; cursor: pointer; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-cyan); transition: var(--transition-smooth);">Sign In</button>
+        <button class="login-tab" id="tabSignUp" style="background: transparent; border: none; color: var(--color-text-muted); font-family: var(--font-headings); font-size: 20px; font-weight: 700; cursor: pointer; padding-bottom: 0.5rem; border-bottom: 2px solid transparent; transition: var(--transition-smooth);">Register</button>
+      </div>
+
+      <!-- Form -->
+      <form id="authForm" style="display: flex; flex-direction: column; gap: 1.25rem;">
+        
+        <!-- Name field (shown on signup tab) -->
+        <div id="signUpNameGroup" style="display: none; flex-direction: column; gap: 0.5rem;">
+          <label for="authName" style="font-size: 12px; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.05em;">Full Name</label>
+          <input type="text" id="authName" placeholder="Alex Morgan" style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 0.75rem 1rem; color: var(--color-text-primary); font-family: var(--font-body); font-size: 14px; outline: none; transition: var(--transition-smooth);">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <label for="authEmail" style="font-size: 12px; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.05em;">Email Address</label>
+          <input type="email" id="authEmail" required placeholder="alex@company.com" style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 0.75rem 1rem; color: var(--color-text-primary); font-family: var(--font-body); font-size: 14px; outline: none; transition: var(--transition-smooth);">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label for="authPassword" style="font-size: 12px; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.05em;">Password</label>
+            <a href="#" id="forgotPasswordLink" style="font-size: 12px; color: var(--color-text-muted); hover-color: var(--color-cyan);">Forgot?</a>
+          </div>
+          <input type="password" id="authPassword" required placeholder="••••••••" style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 0.75rem 1rem; color: var(--color-text-primary); font-family: var(--font-body); font-size: 14px; outline: none; transition: var(--transition-smooth);">
+        </div>
+
+        <!-- Checkbox / Terms -->
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.25rem;">
+          <input type="checkbox" id="authCheck" checked style="accent-color: var(--color-cyan); cursor: pointer;">
+          <label for="authCheck" id="authCheckLabel" style="font-size: 13px; color: var(--color-text-muted); cursor: pointer;">Remember me on this device</label>
+        </div>
+
+        <!-- Submit btn -->
+        <button type="submit" class="btn btn-primary" id="authSubmitBtn" style="width: 100%; padding: 0.85rem; margin-top: 0.5rem; font-weight: 700; box-shadow: var(--glow-cyan); background-color: var(--color-cyan); color: var(--bg-foundation);">
+          <span>Sign In to Account</span>
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating AI Assistant Chatbot Trigger -->
+  <button id="chatbotTrigger" style="position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-emerald) 100%); border: none; z-index: 9999; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 0 25px rgba(34, 211, 238, 0.4); transition: var(--transition-smooth); outline: none;">
+    <i data-lucide="message-square" id="chatbotTriggerIcon" style="color: var(--bg-foundation); width: 28px; height: 28px; display: flex;"></i>
+  </button>
+
+  <!-- Floating AI Assistant Chat Window -->
+  <div id="chatbotWindow" class="glass-card" style="display: none; position: fixed; bottom: 6.5rem; right: 2rem; width: 380px; height: 530px; z-index: 9999; border-color: rgba(34, 211, 238, 0.25); background: rgba(10, 14, 39, 0.95); box-shadow: 0 10px 40px rgba(0,0,0,0.7), 0 0 30px rgba(34, 211, 238, 0.05); flex-direction: column; overflow: hidden; opacity: 0; transform: translateY(20px); transition: all 300ms cubic-bezier(0.34, 1.56, 0.64, 1);">
+    
+    <!-- Header -->
+    <div style="padding: 1.25rem 1.5rem; background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <!-- Glowing Orb Visualizer -->
+        <div class="orb-container" style="position: relative; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+          <div class="orb-ring" id="orbRingOuter" style="position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 1px solid rgba(52, 211, 153, 0.1); transform: scale(1); transition: all 0.5s ease;"></div>
+          <div class="orb-ring" id="orbRingInner" style="position: absolute; width: 85%; height: 85%; border-radius: 50%; border: 2px dashed rgba(34, 211, 238, 0.15); transform: scale(1); transition: all 0.5s ease;"></div>
+          <div class="orb-core" id="voiceOrb" style="width: 28px; height: 28px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #065f46 0%, #10b981 40%, #047857 100%); box-shadow: 0 0 15px rgba(52, 211, 153, 0.3); cursor: pointer; transition: all 0.3s ease;"></div>
+        </div>
+        
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-family: var(--font-headings); font-size: 14px; font-weight: 700; color: var(--color-text-primary);">Ava (AI Sales Specialist)</span>
+          <span id="callStatus" style="font-size: 10px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Ava is Offline</span>
+        </div>
+      </div>
+      
+      <!-- Close Widget -->
+      <button id="closeChatbotBtn" style="background: transparent; border: none; color: var(--color-text-muted); cursor: pointer; display: flex; padding: 0.25rem;">
+        <i data-lucide="minus" style="width: 18px; height: 18px;"></i>
+      </button>
+    </div>
+
+    <!-- Call / Voice Telemetry Ribbon -->
+    <div id="callTelemetry" style="background: rgba(0, 0, 0, 0.2); padding: 0.4rem 1.5rem; font-family: monospace; font-size: 10px; color: var(--color-text-muted); border-bottom: 1px solid rgba(255,255,255,0.03); text-align: center;">
+      Click "Start Call" to begin audio demo
+    </div>
+
+    <!-- Live Transcript Scroll Area -->
+    <div id="transcriptBox" style="flex-grow: 1; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; background: rgba(0,0,0,0.15);">
+      <div style="display: flex; justify-content: space-between; font-size: 10px; color: var(--color-text-muted); font-family: monospace; border-bottom: 1px solid rgba(255,255,255,0.04); padding-bottom: 0.25rem; margin-bottom: 0.25rem;">
+        <span>CONVERSATION TRANSCRIPT</span>
+        <span id="transcriptMode" style="color: var(--color-emerald);">TAP START TO TALK</span>
+      </div>
+      <div id="transcriptFeed" style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 13px;">
+        <div style="color: var(--color-text-muted); text-align: center; font-style: italic; font-size: 12px; margin-top: 2rem;">No active conversation stream. Start a call below to interact!</div>
+      </div>
+    </div>
+
+    <!-- Clickable Prompt Chips -->
+    <div id="promptChipsContainer" style="display: none; flex-direction: column; padding: 1rem 1.25rem; background: rgba(0,0,0,0.25); border-top: 1px solid rgba(255,255,255,0.05); gap: 0.5rem; width: 100%;">
+      <span style="font-size: 10px; font-weight: 700; color: var(--color-cyan); letter-spacing: 0.05em; text-transform: uppercase;">Conversation Prompts</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <button class="prompt-chip" data-phrase="pricing" style="background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 11px; color: var(--color-text-primary); cursor: pointer; transition: var(--transition-smooth);">💬 Pricing</button>
+        <button class="prompt-chip" data-phrase="book" style="background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 11px; color: var(--color-text-primary); cursor: pointer; transition: var(--transition-smooth);">📞 Book Call</button>
+        <button class="prompt-chip" data-phrase="services" style="background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 11px; color: var(--color-text-primary); cursor: pointer; transition: var(--transition-smooth);">⚙️ Services</button>
+        <button class="prompt-chip" data-phrase="voice" style="background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 11px; color: var(--color-text-primary); cursor: pointer; transition: var(--transition-smooth);">🤖 Voice Quality</button>
+      </div>
+    </div>
+
+    <!-- Actions Footer -->
+    <div style="padding: 1.25rem; background: rgba(0, 0, 0, 0.4); border-top: 1px solid rgba(255,255,255,0.06); display: flex; gap: 0.75rem; z-index: 10;">
+      <button class="btn btn-primary" id="startCallBtn" style="flex-grow: 1; padding: 0.65rem; font-size: 13px; font-weight: 700;">
+        <i data-lucide="phone"></i>
+        <span>Start Call</span>
+      </button>
+      <button class="btn btn-secondary" id="micBtn" style="display: none; border-color: var(--color-red); color: var(--color-red); padding: 0.65rem; font-size: 13px; font-weight: 700;">
+        <i data-lucide="mic"></i>
+        <span>Talk</span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Toast Notification System -->
+  <div id="toastContainer" style="position: fixed; bottom: 2rem; right: 2rem; z-index: 100000; display: flex; flex-direction: column; gap: 0.75rem; pointer-events: none;"></div>
+
+  <!-- Lucide Vector Icons Library -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Interactive Dashboard & Core Logic Scripts -->
+  <script src="index.js"></script>
+</body>
+</html>
