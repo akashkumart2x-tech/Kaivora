@@ -360,35 +360,40 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
-  background: var(--glass-bg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 16px;
-  transition: var(--transition-smooth);
+  transition: all 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
-  height: 70px;
+  height: 74px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.logo-card svg,
-.logo-card img {
-  max-width: 100px;
-  height: auto;
-  opacity: 0.4;
-  filter: grayscale(100%);
-  transition: var(--transition-smooth);
+.logo-card svg {
+  height: 32px;
+  width: auto;
+  opacity: 0.35;
+  color: var(--color-text-secondary);
+  transition: all 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .logo-card:hover {
-  border-color: var(--glass-border-bright);
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-4px);
+  border-color: var(--brand-color, var(--color-cyan)) !important;
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px var(--brand-glow, rgba(34, 211, 238, 0.15)), 
+              inset 0 0 10px rgba(255, 255, 255, 0.02);
 }
 
-.logo-card:hover svg,
-.logo-card:hover img {
+.logo-card:hover svg {
   opacity: 0.95;
-  filter: grayscale(0%) brightness(1.2);
+  color: var(--brand-color-active, var(--color-text-primary)) !important;
+  filter: drop-shadow(0 0 6px var(--brand-glow, rgba(34, 211, 238, 0.2)));
 }
+
 
 /* --- FEATURE grid (BENTO) --- */
 .features {
