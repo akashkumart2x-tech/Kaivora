@@ -1183,5 +1183,114 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* --- 13. INTERACTIVE ROI CALCULATOR MATHEMATICS --- */
+  const agentsSlider = document.getElementById("agentsSlider");
+  const agentsValDisplay = document.getElementById("agentsValDisplay");
+  const salarySlider = document.getElementById("salarySlider");
+  const salaryValDisplay = document.getElementById("salaryValDisplay");
+  const humanCostDisplay = document.getElementById("humanCostDisplay");
+  const savingsDisplay = document.getElementById("savingsDisplay");
+
+  function calculateROI() {
+    if (!agentsSlider || !salarySlider) return;
+
+    const agents = parseInt(agentsSlider.value);
+    const salary = parseInt(salarySlider.value);
+    
+    const humanCost = agents * salary;
+    const kaivoraCost = 499;
+    const savings = Math.max(0, humanCost - kaivoraCost);
+
+    if (agentsValDisplay) agentsValDisplay.textContent = agents;
+    if (salaryValDisplay) salaryValDisplay.textContent = "$" + salary.toLocaleString();
+    if (humanCostDisplay) humanCostDisplay.textContent = "$" + humanCost.toLocaleString() + " / mo";
+    
+    if (savingsDisplay) {
+      savingsDisplay.textContent = "$" + savings.toLocaleString();
+    }
+  }
+
+  if (agentsSlider && salarySlider) {
+    agentsSlider.addEventListener("input", calculateROI);
+    salarySlider.addEventListener("input", calculateROI);
+    // Initial calculation trigger
+    calculateROI();
+  }
+
+  /* --- 14. EXIT-INTENT LEAD MAGNET MODAL FLOW --- */
+  const exitIntentModal = document.getElementById("exitIntentModal");
+  const closeExitBtn = document.getElementById("closeExitBtn");
+  const exitForm = document.getElementById("exitForm");
+  const exitSubmitBtn = document.getElementById("exitSubmitBtn");
+
+  function openExitModal() {
+    if (!exitIntentModal) return;
+    exitIntentModal.style.display = "flex";
+    setTimeout(() => {
+      exitIntentModal.classList.add("open");
+    }, 10);
+  }
+
+  function closeExitModal() {
+    if (!exitIntentModal) return;
+    exitIntentModal.classList.remove("open");
+    setTimeout(() => {
+      exitIntentModal.style.display = "none";
+    }, 300);
+  }
+
+  // Mouse leave exit detector
+  document.addEventListener("mouseleave", (e) => {
+    // Check if exit intent has already triggered in this session
+    const triggered = sessionStorage.getItem("exitPopupTriggered");
+    if (triggered) return;
+
+    // Trigger popup only when mouse exits top of window
+    if (e.clientY < 20) {
+      sessionStorage.setItem("exitPopupTriggered", "true");
+      openExitModal();
+      showToast("Wait! We have an exclusive AI Operational Audit for your business.", "info");
+    }
+  });
+
+  if (closeExitBtn) {
+    closeExitBtn.addEventListener("click", closeExitModal);
+  }
+
+  if (exitIntentModal) {
+    exitIntentModal.addEventListener("click", (e) => {
+      if (e.target === exitIntentModal) {
+        closeExitModal();
+      }
+    });
+  }
+
+  // Handle lead magnet form submission
+  if (exitForm && exitSubmitBtn) {
+    exitForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("exitName").value;
+      const email = document.getElementById("exitEmail").value;
+
+      // Loading state
+      exitSubmitBtn.disabled = true;
+      exitSubmitBtn.style.opacity = "0.7";
+      const originalHTML = exitSubmitBtn.innerHTML;
+      exitSubmitBtn.innerHTML = `<span>Analyzing operations pipelines...</span>`;
+
+      setTimeout(() => {
+        showToast(`Success! Your custom 3-page AI automation blueprint will be delivered to ${email} within 15 minutes.`, "success");
+        
+        exitForm.reset();
+        exitSubmitBtn.disabled = false;
+        exitSubmitBtn.style.opacity = "1";
+        exitSubmitBtn.innerHTML = originalHTML;
+        
+        closeExitModal();
+      }, 1500);
+    });
+  }
+
 });
 
