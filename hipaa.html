@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIPAA Compliance & Healthcare Security | Kaivora</title>
+  <meta name="description" content="Integrate HIPAA-compliant AI Employees. Learn how Kaivora safeguards Protected Health Information (PHI) and supports Business Associate Agreements (BAA).">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .legal-content {
+      line-height: 1.8;
+      font-size: 15px;
+      color: var(--color-text-secondary);
+    }
+    .legal-content h2 {
+      font-size: 22px;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--color-text-primary);
+    }
+    .legal-content p {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navigation Header -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <a href="index.html" class="header-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="logo.jpg" alt="Kaivora Logo" style="height: 44px; width: 44px; border-radius: 50%; border: 1px solid rgba(59, 130, 246, 0.2); box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);">
+        <span>KAIVORA</span>
+      </a>
+      
+      <nav class="header-nav">
+        <a href="index.html#overview">Overview</a>
+        <a href="index.html#what-we-build">What We Build</a>
+        <a href="index.html#analytics">Orchestrator</a>
+        <a href="index.html#workflow">Workflow</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary" onclick="window.location.href='index.html#pricing'">Login</button>
+        <button class="btn btn-primary" onclick="window.location.href='index.html#pricing'">Build AI Employee</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 10rem 0 6rem; position: relative;">
+    <div class="container" style="max-width: 800px;">
+      
+      <!-- Page Header -->
+      <div class="section-header" style="margin-bottom: 4rem;">
+        <span class="section-tag">HEALTHCARE STANDARDS</span>
+        <h1 class="text-gradient" style="font-size: 48px; margin-bottom: 1rem;">HIPAA Compliance</h1>
+        <p style="font-family: monospace; font-size: 13px;">Last Updated: May 2026</p>
+      </div>
+
+      <!-- Legal Content Block -->
+      <div class="glass-card legal-content" style="padding: 4rem; border-color: var(--glass-border-heavy); background: rgba(10, 14, 39, 0.45); border-radius: 28px;">
+        
+        <p>
+          Healthcare providers handling Protected Health Information (PHI) require the highest standard of data containment and security. Kaivora is engineered to be natively compatible with HIPAA requirements, allowing clinics, hospitals, and digital health startups to deploy custom voice and chat receptionists safely.
+        </p>
+
+        <h2>1. Business Associate Agreements (BAA)</h2>
+        <p>
+          Under HIPAA rules, any software entity interacting with PHI acts as a "Business Associate." Kaivora signs standard **Business Associate Agreements (BAA)** with all our healthcare customers subscribing to our Enterprise custom tiers, formally codifying our compliance commitments and security covenants.
+        </p>
+
+        <h2>2. Technical Safeguards & PHI Containment</h2>
+        <p>
+          We implement a multi-layered security framework to protect patient data:
+        </p>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+          <li><strong>Dual AES-256 Encryption:</strong> Patient details, triage transcripts, and voice files are encrypted both in transit (using TLS 1.3) and at rest using separate unique master keys.</li>
+          <li><strong>Role-Based Access (RBAC):</strong> Access to conversational logs is strictly partitioned using strict multi-factor authentication (MFA) and granular permissions.</li>
+          <li><strong>Cryptographic Audit Trails:</strong> Every API call, CRM sync attempt, and database login is logged permanently in tamper-proof audit trails.</li>
+        </ul>
+
+        <h2>3. Secure Patient Intake & Triage</h2>
+        <p>
+          When deploying a Kaivora Voice Receptionist to handle patient booking or intake, the agent is restricted by strict prompt boundaries. Triage transcripts containing sensitive diagnosis keywords are immediately parsed, tokenized to mask PHI, and passed directly into your secure, HIPAA-compliant EHR or patient portal endpoints.
+        </p>
+
+        <h2>4. Zero Data Retention Policy</h2>
+        <p>
+          To eliminate data exposure paths, Kaivora operates a zero-retention architecture for healthcare pools. Conversational recordings and transcript strings are processed in volatile memory, written securely to your target EHR portal, and instantly wiped from Kaivora server records.
+        </p>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Multi-column Footer -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a href="#" class="footer-brand-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+            <img src="logo.jpg" alt="Kaivora Logo" style="height: 44px; width: 44px; border-radius: 50%; border: 1px solid rgba(59, 130, 246, 0.2); box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);">
+            <span>KAIVORA</span>
+          </a>
+          <p class="footer-brand-desc" style="margin-bottom: 0.5rem;">
+            Sleek dark-themed AI systems delivering real operational results for forward-thinking enterprises.
+          </p>
+          <div class="footer-socials" style="margin-bottom: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <!-- Instagram -->
+            <a href="https://instagram.com/thekaivora.ai" target="_blank" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect width="4" height="12" x="2" y="9"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <!-- Twitter / X -->
+            <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+            <!-- Telegram -->
+            <a href="https://t.me" target="_blank" class="social-icon" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="m22 2-7 20-4-9-9-4Z"/>
+                <path d="M22 2 11 13"/>
+              </svg>
+            </a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 13px; color: var(--color-text-muted); margin-top: 0.5rem;">
+            <div style="display: flex; align-items: start; gap: 0.5rem;">
+              <i data-lucide="map-pin" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0; margin-top: 0.15rem;"></i>
+              <span style="line-height: 1.4;">Flat no. A2 AMD Aravali complex, bambala, sanganer, jaipur, 302022</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="phone" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0;"></i>
+              <a href="tel:+919279593695" style="transition: var(--transition-smooth); color: var(--color-text-secondary); text-decoration: none;">+91 9279593695</a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="mail" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0;"></i>
+              <a href="mailto:thekaivora.ai@gmail.com" style="transition: var(--transition-smooth); color: var(--color-text-secondary); text-decoration: none;">thekaivora.ai@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Product -->
+        <div class="footer-col">
+          <h4>Agent Suite</h4>
+          <ul>
+            <li><a href="index.html#what-we-build">AI Chat Agents</a></li>
+            <li><a href="index.html#what-we-build">AI Voice Agents</a></li>
+            <li><a href="index.html#what-we-build">Sales Automation</a></li>
+            <li><a href="index.html#what-we-build">Calendar Bookers</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Kaivora</a></li>
+            <li><a href="security.html">Security posture</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press Kit</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Resources -->
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="sdk-docs.html">Agent SDK Docs</a></li>
+            <li><a href="api-reference.html">Integration API</a></li>
+            <li><a href="status.html">System Uptime</a></li>
+            <li><a href="case-studies.html">AI Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal -->
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="sla.html">SLA Agreement</a></li>
+            <li><a href="hipaa.html">HIPAA Compliance</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Kaivora Inc. All rights reserved. Custom AI Agents. Real Operational Results.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

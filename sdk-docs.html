@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent SDK Documentation | Kaivora Developers</title>
+  <meta name="description" content="Integrate Kaivora's autonomous AI Agents. Complete SDK documentation covering Voice setup, API keys, Webhooks, node parameters, and error handling.">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    /* Documentation Page Layout overrides */
+    .docs-container {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 1024px) {
+      .docs-container {
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+      }
+      .docs-sidebar {
+        position: sticky;
+        top: 120px;
+        height: calc(100vh - 160px);
+        overflow-y: auto;
+      }
+    }
+    .docs-nav-link {
+      display: block;
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      transition: var(--transition-smooth);
+    }
+    .docs-nav-link:hover, .docs-nav-link.active {
+      color: var(--color-cyan);
+      background: rgba(59, 130, 246, 0.05);
+      border-left: 2px solid var(--color-cyan);
+    }
+    .code-block {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1.5rem;
+      font-family: monospace;
+      font-size: 13px;
+      color: var(--color-cyan);
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navigation Header -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <a href="index.html" class="header-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="logo.jpg" alt="Kaivora Logo" style="height: 44px; width: 44px; border-radius: 50%; border: 1px solid rgba(59, 130, 246, 0.2); box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);">
+        <span>KAIVORA</span>
+      </a>
+      
+      <nav class="header-nav">
+        <a href="index.html#overview">Overview</a>
+        <a href="index.html#what-we-build">What We Build</a>
+        <a href="index.html#analytics">Orchestrator</a>
+        <a href="index.html#workflow">Workflow</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary" onclick="window.location.href='index.html#pricing'">Login</button>
+        <button class="btn btn-primary" onclick="window.location.href='index.html#pricing'">Build AI Employee</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 10rem 0 6rem; position: relative;">
+    <div class="container">
+      
+      <div class="docs-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="docs-sidebar glass-card" style="padding: 1.5rem; border-color: rgba(255,255,255,0.05); background: rgba(10, 14, 39, 0.3); border-radius: 20px;">
+          <h4 style="font-size: 13px; font-weight: 700; color: var(--color-text-primary); text-transform: uppercase; margin-bottom: 1rem; padding-left: 1rem;">SDK Guide</h4>
+          <nav style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <a href="#overview" class="docs-nav-link active">Overview</a>
+            <a href="#auth" class="docs-nav-link">Authentication</a>
+            <a href="#creation" class="docs-nav-link">Agent Creation</a>
+            <a href="#voice-setup" class="docs-nav-link">Voice Setup</a>
+            <a href="#webhooks" class="docs-nav-link">Webhook Configuration</a>
+            <a href="#errors" class="docs-nav-link">Error Codes</a>
+          </nav>
+        </aside>
+
+        <!-- Right ContentPane -->
+        <article style="display: flex; flex-direction: column; gap: 4rem;">
+          
+          <!-- Overview -->
+          <section id="overview">
+            <h1 class="text-gradient" style="font-size: 40px; margin-bottom: 1.5rem;">Agent SDK Docs</h1>
+            <p style="font-size: 16px; line-height: 1.7; color: var(--color-text-secondary);">
+              The Kaivora Agent SDK allows developers to initialize, configure, and orchestrate specialized autonomous AI Employees inside web applications and enterprise workflows. With built-in low-latency audio capture pipelines, turn-taking state machines, and real-time webhook updates, you can deploy a full-duplex sales assistant or customer support node in a few lines of code.
+            </p>
+            <div class="code-block">
+              // Installation via npm
+              npm install @kaivora/agent-sdk --save
+            </div>
+          </section>
+
+          <!-- Authentication -->
+          <section id="auth">
+            <h2 style="font-size: 28px; margin-bottom: 1rem; color: var(--color-text-primary);">Authentication & API Keys</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--color-text-secondary);">
+              All SDK calls must carry a secure Bearer token initialized in your developer control panel under standard settings coordinates. Keep these keys protected.
+            </p>
+            <div class="code-block">
+const { KaivoraClient } = require('@kaivora/agent-sdk');
+
+// Initialize secure connection cluster
+const client = new KaivoraClient({
+  apiKey: 'kv_prod_live_88291aBcDeFgHiJkLmNoP',
+  environment: 'production'
+});
+            </div>
+          </section>
+
+          <!-- Agent Creation -->
+          <section id="creation">
+            <h2 style="font-size: 28px; margin-bottom: 1rem; color: var(--color-text-primary);">Agent Creation</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--color-text-secondary);">
+              Deploy custom agents by referencing specialized playbooks, memory containment rules, and bi-directional CRM endpoints.
+            </p>
+            <div class="code-block">
+const agent = await client.agents.create({
+  name: 'Ava Support Pool',
+  type: 'voice-receptionist',
+  promptPlaybook: 'https://cdn.kaivora.ai/playbooks/inbound_sales.json',
+  crmSync: {
+    platform: 'hubspot',
+    scopes: ['contacts.write', 'deals.write']
+  }
+});
+
+console.log(`Agent Active: ${agent.id}`);
+            </div>
+          </section>
+
+          <!-- Voice Setup -->
+          <section id="voice-setup">
+            <h2 style="font-size: 28px; margin-bottom: 1rem; color: var(--color-text-primary);">Voice Setup & WebRTC</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--color-text-secondary);">
+              Establish full-duplex, low-latency streaming speech synthesis by binding the microphone node to the active Kaivora voice audio channels.
+            </p>
+            <div class="code-block">
+// Bind real-time full-duplex audio pipeline
+const callStream = await client.voice.startSession({
+  agentId: agent.id,
+  audioOptions: {
+    sampleRate: 48000,
+    echoCancellation: true,
+    noiseSuppression: true
+  }
+});
+
+callStream.on('transcript', (data) => {
+  console.log(`User: ${data.text}`);
+});
+            </div>
+          </section>
+
+          <!-- Webhooks -->
+          <section id="webhooks">
+            <h2 style="font-size: 28px; margin-bottom: 1rem; color: var(--color-text-primary);">Webhook Configuration</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--color-text-secondary);">
+              Recieve secure endpoints updates in real-time when discovery meetings are booked or CRM client database variables get synchronized.
+            </p>
+            <div class="code-block">
+{
+  "event": "booking.completed",
+  "timestamp": "2026-05-29T21:30:00Z",
+  "data": {
+    "agentId": "agent_voice_sec_01",
+    "customer": {
+      "name": "Sarah Miller",
+      "email": "sarah@enterprise.com"
+    },
+    "appointment": {
+      "slot": "2026-06-02T14:00:00Z",
+      "status": "confirmed"
+    }
+  }
+}
+            </div>
+          </section>
+
+          <!-- Error Codes -->
+          <section id="errors">
+            <h2 style="font-size: 28px; margin-bottom: 1.5rem; color: var(--color-text-primary);">Error Reference Codes</h2>
+            
+            <table style="width: 100%; font-size: 14px; color: var(--color-text-secondary); border-collapse: collapse; text-align: left;">
+              <thead>
+                <tr style="border-bottom: 2px solid rgba(255,255,255,0.08); color: var(--color-text-primary);">
+                  <th style="padding: 0.75rem 0;">Error Code</th>
+                  <th style="padding: 0.75rem 0;">Description</th>
+                  <th style="padding: 0.75rem 0;">Resolution</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
+                  <td style="padding: 0.75rem 0; font-family: monospace; color: var(--color-cyan);">401_AUTH_FAILED</td>
+                  <td style="padding: 0.75rem 0;">API key is invalid or expired.</td>
+                  <td style="padding: 0.75rem 0;">Generate a new key inside dashboard.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
+                  <td style="padding: 0.75rem 0; font-family: monospace; color: var(--color-cyan);">429_LIMIT_EXCEEDED</td>
+                  <td style="padding: 0.75rem 0;">Rate limit of 60 requests/min hit.</td>
+                  <td style="padding: 0.75rem 0;">Implement backoff or upgrade your tier.</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.75rem 0; font-family: monospace; color: var(--color-cyan);">503_VOICE_TIMEOUT</td>
+                  <td style="padding: 0.75rem 0;">Audio pipeline connection timeout.</td>
+                  <td style="padding: 0.75rem 0;">Check local browser mic permission status.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+        </article>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Multi-column Footer -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a href="#" class="footer-brand-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+            <img src="logo.jpg" alt="Kaivora Logo" style="height: 44px; width: 44px; border-radius: 50%; border: 1px solid rgba(59, 130, 246, 0.2); box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);">
+            <span>KAIVORA</span>
+          </a>
+          <p class="footer-brand-desc" style="margin-bottom: 0.5rem;">
+            Sleek dark-themed AI systems delivering real operational results for forward-thinking enterprises.
+          </p>
+          <div class="footer-socials" style="margin-bottom: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <!-- Instagram -->
+            <a href="https://instagram.com/thekaivora.ai" target="_blank" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect width="4" height="12" x="2" y="9"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <!-- Twitter / X -->
+            <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+            <!-- Telegram -->
+            <a href="https://t.me" target="_blank" class="social-icon" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="m22 2-7 20-4-9-9-4Z"/>
+                <path d="M22 2 11 13"/>
+              </svg>
+            </a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 13px; color: var(--color-text-muted); margin-top: 0.5rem;">
+            <div style="display: flex; align-items: start; gap: 0.5rem;">
+              <i data-lucide="map-pin" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0; margin-top: 0.15rem;"></i>
+              <span style="line-height: 1.4;">Flat no. A2 AMD Aravali complex, bambala, sanganer, jaipur, 302022</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="phone" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0;"></i>
+              <a href="tel:+919279593695" style="transition: var(--transition-smooth); color: var(--color-text-secondary); text-decoration: none;">+91 9279593695</a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="mail" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0;"></i>
+              <a href="mailto:thekaivora.ai@gmail.com" style="transition: var(--transition-smooth); color: var(--color-text-secondary); text-decoration: none;">thekaivora.ai@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Product -->
+        <div class="footer-col">
+          <h4>Agent Suite</h4>
+          <ul>
+            <li><a href="index.html#what-we-build">AI Chat Agents</a></li>
+            <li><a href="index.html#what-we-build">AI Voice Agents</a></li>
+            <li><a href="index.html#what-we-build">Sales Automation</a></li>
+            <li><a href="index.html#what-we-build">Calendar Bookers</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Kaivora</a></li>
+            <li><a href="security.html">Security posture</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press Kit</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Resources -->
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="sdk-docs.html">Agent SDK Docs</a></li>
+            <li><a href="api-reference.html">Integration API</a></li>
+            <li><a href="status.html">System Uptime</a></li>
+            <li><a href="case-studies.html">AI Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal -->
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="sla.html">SLA Agreement</a></li>
+            <li><a href="hipaa.html">HIPAA Compliance</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Kaivora Inc. All rights reserved. Custom AI Agents. Real Operational Results.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
+
+    // Dynamic docs scroll highlighting
+    const links = document.querySelectorAll('.docs-nav-link');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        if (window.scrollY >= top - 180) {
+          current = section.getAttribute('id');
+        }
+      });
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

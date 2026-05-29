@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integration API Reference | Kaivora Developers</title>
+  <meta name="description" content="Complete Kaivora REST API reference documentation. Integrate custom chat, voice dispatchers, and analytics endpoints using secure REST APIs.">
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .api-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 1024px) {
+      .api-grid {
+        grid-template-columns: 260px 1.1fr 0.9fr;
+        gap: 3rem;
+      }
+      .api-sidebar {
+        position: sticky;
+        top: 120px;
+        height: calc(100vh - 160px);
+        overflow-y: auto;
+      }
+    }
+    .api-link {
+      display: block;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      transition: var(--transition-smooth);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .api-link:hover, .api-link.active {
+      color: var(--color-cyan);
+      background: rgba(59, 130, 246, 0.05);
+      border-left: 2px solid var(--color-cyan);
+    }
+    .method-badge {
+      font-family: monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+    }
+    .method-badge.post { background: rgba(52, 211, 153, 0.15); color: #10b981; }
+    .method-badge.get { background: rgba(34, 211, 238, 0.15); color: var(--color-cyan); }
+    .json-panel {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1.5rem;
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--color-cyan);
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navigation Header -->
+  <header class="header" id="mainHeader">
+    <div class="container">
+      <a href="index.html" class="header-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+        <img src="logo.jpg" alt="Kaivora Logo" style="height: 44px; width: 44px; border-radius: 50%; border: 1px solid rgba(59, 130, 246, 0.2); box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);">
+        <span>KAIVORA</span>
+      </a>
+      
+      <nav class="header-nav">
+        <a href="index.html#overview">Overview</a>
+        <a href="index.html#what-we-build">What We Build</a>
+        <a href="index.html#analytics">Orchestrator</a>
+        <a href="index.html#workflow">Workflow</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-secondary" onclick="window.location.href='index.html#pricing'">Login</button>
+        <button class="btn btn-primary" onclick="window.location.href='index.html#pricing'">Build AI Employee</button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 10rem 0 6rem; position: relative;">
+    <div class="container">
+      
+      <div class="api-grid">
+        
+        <!-- API Sidebar Navigation -->
+        <aside class="api-sidebar glass-card" style="padding: 1.5rem; border-color: rgba(255,255,255,0.05); background: rgba(10, 14, 39, 0.3); border-radius: 20px;">
+          <h4 style="font-size: 13px; font-weight: 700; color: var(--color-text-primary); text-transform: uppercase; margin-bottom: 1rem; padding-left: 1rem;">Endpoints</h4>
+          <nav style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <a href="#authentication" class="api-link active">Authentication</a>
+            <a href="#create-agent" class="api-link"><span class="method-badge post">POST</span>Create Agent</a>
+            <a href="#dispatch-call" class="api-link"><span class="method-badge post">POST</span>Dispatch Call</a>
+            <a href="#get-analytics" class="api-link"><span class="method-badge get">GET</span>Get Telemetry</a>
+          </nav>
+        </aside>
+
+        <!-- API specs pane -->
+        <div style="display: flex; flex-direction: column; gap: 5rem;">
+          
+          <!-- Authentication Section -->
+          <section id="authentication">
+            <h1 class="text-gradient" style="font-size: 40px; margin-bottom: 1.5rem;">API Reference</h1>
+            <h2 style="font-size: 22px; color: var(--color-text-primary); margin-bottom: 1rem;">Authentication Guide</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+              Authenticate your API requests by including your secure Bearer key inside the standard authorization headers of your POST/GET request payloads.
+            </p>
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 1.25rem; border-radius: 10px; font-family: monospace; font-size: 12px; color: var(--color-text-secondary);">
+              Authorization: Bearer YOUR_API_KEY
+            </div>
+          </section>
+
+          <!-- Create Agent Section -->
+          <section id="create-agent">
+            <h2 style="font-size: 22px; color: var(--color-text-primary); margin-bottom: 0.5rem; display: flex; align-items: center;"><span class="method-badge post">POST</span> Create Agent Instance</h2>
+            <code style="font-family: monospace; font-size: 13px; color: var(--color-cyan); display: block; margin-bottom: 1rem;">/v1/agents/create</code>
+            <p style="font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+              Creates and provisions a new conversational chatbot or voice assistant instance using custom behavior rules and playbooks.
+            </p>
+            <h4 style="font-size: 12px; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; margin-bottom: 0.75rem;">Body Parameters</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 13px; color: var(--color-text-muted);">
+              <li><strong style="color: var(--color-text-secondary);">name</strong> <span style="font-style: italic;">string (required)</span> - The name of the digital employee.</li>
+              <li><strong style="color: var(--color-text-secondary);">type</strong> <span style="font-style: italic;">string (required)</span> - either `voice-receptionist` or `chat-specialist`.</li>
+              <li><strong style="color: var(--color-text-secondary);">promptPlaybook</strong> <span style="font-style: italic;">string (required)</span> - URL to JSON rules framework.</li>
+            </ul>
+          </section>
+
+          <!-- Dispatch Call Section -->
+          <section id="dispatch-call">
+            <h2 style="font-size: 22px; color: var(--color-text-primary); margin-bottom: 0.5rem; display: flex; align-items: center;"><span class="method-badge post">POST</span> Dispatch Outbound Call</h2>
+            <code style="font-family: monospace; font-size: 13px; color: var(--color-cyan); display: block; margin-bottom: 1rem;">/v1/calls/dispatch</code>
+            <p style="font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+              Triggers an autonomous outbound VoIP call connection using standard VAD structures and custom voice tuning.
+            </p>
+            <h4 style="font-size: 12px; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; margin-bottom: 0.75rem;">Body Parameters</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 13px; color: var(--color-text-muted);">
+              <li><strong style="color: var(--color-text-secondary);">agentId</strong> <span style="font-style: italic;">string (required)</span> - The ID of the configured voice agent.</li>
+              <li><strong style="color: var(--color-text-secondary);">phoneNumber</strong> <span style="font-style: italic;">string (required)</span> - E.164 formatted number.</li>
+            </ul>
+          </section>
+
+          <!-- Get Telemetry Section -->
+          <section id="get-analytics">
+            <h2 style="font-size: 22px; color: var(--color-text-primary); margin-bottom: 0.5rem; display: flex; align-items: center;"><span class="method-badge get">GET</span> Get Telemetry</h2>
+            <code style="font-family: monospace; font-size: 13px; color: var(--color-cyan); display: block; margin-bottom: 1rem;">/v1/analytics/telemetry</code>
+            <p style="font-size: 14px; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+              Retrieves live conversational stats, sentiment analysis scores, and resolved ticket counts.
+            </p>
+          </section>
+
+        </div>
+
+        <!-- Right codepane (sticky JSON examples) -->
+        <div style="display: flex; flex-direction: column; gap: 4rem; position: sticky; top: 120px;">
+          
+          <div>
+            <h4 style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 0.5rem;">Request Example (POST)</h4>
+            <div class="json-panel">
+{
+  "name": "Ava Support",
+  "type": "voice-receptionist",
+  "promptPlaybook": "https://cdn.kaivora.ai/rules.json"
+}
+            </div>
+          </div>
+
+          <div>
+            <h4 style="font-size: 11px; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 0.5rem;">Response Example</h4>
+            <div class="json-panel">
+{
+  "status": "success",
+  "data": {
+    "agentId": "agent_voice_sec_01",
+    "created_at": "2026-05-29T21:30:00Z",
+    "active": true
+  }
+}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Multi-column Footer -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a href="#" class="footer-brand-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+            <img src="logo.jpg" alt="Kaivora Logo" style="height: 44px; width: 44px; border-radius: 50%; border: 1px solid rgba(59, 130, 246, 0.2); box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);">
+            <span>KAIVORA</span>
+          </a>
+          <p class="footer-brand-desc" style="margin-bottom: 0.5rem;">
+            Sleek dark-themed AI systems delivering real operational results for forward-thinking enterprises.
+          </p>
+          <div class="footer-socials" style="margin-bottom: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
+            <!-- Instagram -->
+            <a href="https://instagram.com/thekaivora.ai" target="_blank" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect width="4" height="12" x="2" y="9"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <!-- Twitter / X -->
+            <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+              </svg>
+            </a>
+            <!-- Telegram -->
+            <a href="https://t.me" target="_blank" class="social-icon" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px; display: flex;">
+                <path d="m22 2-7 20-4-9-9-4Z"/>
+                <path d="M22 2 11 13"/>
+              </svg>
+            </a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 13px; color: var(--color-text-muted); margin-top: 0.5rem;">
+            <div style="display: flex; align-items: start; gap: 0.5rem;">
+              <i data-lucide="map-pin" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0; margin-top: 0.15rem;"></i>
+              <span style="line-height: 1.4;">Flat no. A2 AMD Aravali complex, bambala, sanganer, jaipur, 302022</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="phone" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0;"></i>
+              <a href="tel:+919279593695" style="transition: var(--transition-smooth); color: var(--color-text-secondary); text-decoration: none;">+91 9279593695</a>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <i data-lucide="mail" style="color: var(--color-cyan); width: 16px; height: 16px; display: flex; flex-shrink: 0;"></i>
+              <a href="mailto:thekaivora.ai@gmail.com" style="transition: var(--transition-smooth); color: var(--color-text-secondary); text-decoration: none;">thekaivora.ai@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Product -->
+        <div class="footer-col">
+          <h4>Agent Suite</h4>
+          <ul>
+            <li><a href="index.html#what-we-build">AI Chat Agents</a></li>
+            <li><a href="index.html#what-we-build">AI Voice Agents</a></li>
+            <li><a href="index.html#what-we-build">Sales Automation</a></li>
+            <li><a href="index.html#what-we-build">Calendar Bookers</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Company -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Kaivora</a></li>
+            <li><a href="security.html">Security posture</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press Kit</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Resources -->
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="sdk-docs.html">Agent SDK Docs</a></li>
+            <li><a href="api-reference.html">Integration API</a></li>
+            <li><a href="status.html">System Uptime</a></li>
+            <li><a href="case-studies.html">AI Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal -->
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Use</a></li>
+            <li><a href="sla.html">SLA Agreement</a></li>
+            <li><a href="hipaa.html">HIPAA Compliance</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Kaivora Inc. All rights reserved. Custom AI Agents. Real Operational Results.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
+
+    // Sidebar highlights
+    const links = document.querySelectorAll('.api-link');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        if (window.scrollY >= top - 180) {
+          current = section.getAttribute('id');
+        }
+      });
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
