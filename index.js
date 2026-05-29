@@ -956,34 +956,58 @@ document.addEventListener("DOMContentLoaded", () => {
   function switchToSignIn() {
     isRegisterTab = false;
     tabSignIn.classList.add("active");
-    tabSignIn.style.color = "var(--color-text-primary)";
-    tabSignIn.style.borderBottomColor = "var(--color-cyan)";
-    
     tabSignUp.classList.remove("active");
-    tabSignUp.style.color = "var(--color-text-muted)";
-    tabSignUp.style.borderBottomColor = "transparent";
     
-    signUpNameGroup.style.display = "none";
+    // Slide transition indicator
+    const tabSlide = document.getElementById("authTabSlide");
+    if (tabSlide) {
+      tabSlide.style.transform = "translateX(0)";
+    }
+    
+    signUpNameGroup.classList.remove("active");
     authName.removeAttribute("required");
-    authCheckLabel.textContent = "Remember me on this device";
-    authSubmitBtn.querySelector("span").textContent = "Sign In to Account";
+    
+    // Fade out-in text descriptions seamlessly
+    authCheckLabel.style.transition = "opacity 180ms ease";
+    authSubmitBtn.querySelector("span").style.transition = "opacity 180ms ease";
+    authCheckLabel.style.opacity = "0";
+    authSubmitBtn.querySelector("span").style.opacity = "0";
+    
+    setTimeout(() => {
+      authCheckLabel.textContent = "Remember me on this device";
+      authSubmitBtn.querySelector("span").textContent = "Sign In to Account";
+      authCheckLabel.style.opacity = "1";
+      authSubmitBtn.querySelector("span").style.opacity = "1";
+    }, 180);
   }
 
   // Switch to Register Tab
   function switchToSignUp() {
     isRegisterTab = true;
     tabSignUp.classList.add("active");
-    tabSignUp.style.color = "var(--color-text-primary)";
-    tabSignUp.style.borderBottomColor = "var(--color-cyan)";
-    
     tabSignIn.classList.remove("active");
-    tabSignIn.style.color = "var(--color-text-muted)";
-    tabSignIn.style.borderBottomColor = "transparent";
     
-    signUpNameGroup.style.display = "flex";
+    // Slide transition indicator
+    const tabSlide = document.getElementById("authTabSlide");
+    if (tabSlide) {
+      tabSlide.style.transform = "translateX(calc(100% + 4px))";
+    }
+    
+    signUpNameGroup.classList.add("active");
     authName.setAttribute("required", "true");
-    authCheckLabel.textContent = "I accept the Kaivora Terms of Service";
-    authSubmitBtn.querySelector("span").textContent = "Create AI Employee Account";
+    
+    // Fade out-in text descriptions seamlessly
+    authCheckLabel.style.transition = "opacity 180ms ease";
+    authSubmitBtn.querySelector("span").style.transition = "opacity 180ms ease";
+    authCheckLabel.style.opacity = "0";
+    authSubmitBtn.querySelector("span").style.opacity = "0";
+    
+    setTimeout(() => {
+      authCheckLabel.textContent = "I accept the Kaivora Terms of Service";
+      authSubmitBtn.querySelector("span").textContent = "Create AI Employee Account";
+      authCheckLabel.style.opacity = "1";
+      authSubmitBtn.querySelector("span").style.opacity = "1";
+    }, 180);
   }
 
   // Modal event listeners

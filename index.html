@@ -1215,19 +1215,20 @@
         <i data-lucide="x" style="width: 20px; height: 20px;"></i>
       </button>
 
-      <!-- Tabs -->
-      <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 0.5rem;">
-        <button class="login-tab active" id="tabSignIn" style="background: transparent; border: none; color: var(--color-text-primary); font-family: var(--font-headings); font-size: 20px; font-weight: 700; cursor: pointer; padding-bottom: 0.5rem; border-bottom: 2px solid var(--color-cyan); transition: var(--transition-smooth);">Sign In</button>
-        <button class="login-tab" id="tabSignUp" style="background: transparent; border: none; color: var(--color-text-muted); font-family: var(--font-headings); font-size: 20px; font-weight: 700; cursor: pointer; padding-bottom: 0.5rem; border-bottom: 2px solid transparent; transition: var(--transition-smooth);">Register</button>
+      <!-- Tabs Container with sliding pill -->
+      <div class="auth-tab-wrapper">
+        <div class="auth-tab-slide" id="authTabSlide"></div>
+        <button class="login-tab active" id="tabSignIn" type="button">Sign In</button>
+        <button class="login-tab" id="tabSignUp" type="button">Register</button>
       </div>
 
       <!-- Form -->
       <form id="authForm" style="display: flex; flex-direction: column; gap: 1.25rem;">
         
-        <!-- Name field (shown on signup tab) -->
-        <div id="signUpNameGroup" style="display: none; flex-direction: column; gap: 0.5rem;">
+        <!-- Name field (shown on signup tab) with premium transition -->
+        <div id="signUpNameGroup" class="auth-group-transition">
           <label for="authName" style="font-size: 12px; font-weight: 700; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 0.05em;">Full Name</label>
-          <input type="text" id="authName" placeholder="Alex Morgan" style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 0.75rem 1rem; color: var(--color-text-primary); font-family: var(--font-body); font-size: 14px; outline: none; transition: var(--transition-smooth);">
+          <input type="text" id="authName" placeholder="Alex Morgan" style="background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 0.75rem 1rem; color: var(--color-text-primary); font-family: var(--font-body); font-size: 14px; outline: none; transition: var(--transition-smooth); width: 100%;">
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 0.5rem;">
